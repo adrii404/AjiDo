@@ -9,7 +9,7 @@
         <a href="{{ route('calendar') }}"
            class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
             Calendar
-        </a><a href="{{ route('todo') }}"
+        </a><a href="/todos"
            class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
             To Do
         </a>
