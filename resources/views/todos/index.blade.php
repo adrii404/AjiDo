@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto py-10 px-6">
 
-        <h1 class="text-3xl font-bold mb-6">
+        <h1 class="text-3xl font-bold mb-6 text-pink-800">
             Todo Planner
         </h1>
 
@@ -70,7 +70,6 @@
             </form>
         </div>
 
-        {{-- TODO LIST --}}
         <div class="space-y-4">
 
             @forelse($todos as $todo)
