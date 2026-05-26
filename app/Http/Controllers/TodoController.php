@@ -16,6 +16,7 @@ class TodoController extends Controller
         $validated = $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable',
+            'category' => 'required|string',
             'due_date' => 'nullable|date',
         ]);
 
@@ -24,5 +25,13 @@ class TodoController extends Controller
         return redirect()
         ->back()
         ->with('success', 'To-do created successfully!');
+    }
+
+    public function toggle(Todo $todo){
+        $todo->completed = !$todo->completed;
+
+        $todo->save();
+
+        return back();
     }
 }

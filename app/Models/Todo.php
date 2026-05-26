@@ -10,6 +10,7 @@ class Todo extends Model
         'title',
         'description',
         'due_date',
-        'is_completed',
+        'category',
+        'completed',
     ];
 }
