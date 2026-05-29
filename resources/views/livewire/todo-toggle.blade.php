@@ -31,7 +31,7 @@ class="bg-white shadow rounded-xl p-5">
                 type="checkbox"
                 @click="toggle"
                 x-model="completed"
-                class="mt-1 w-5 h-5 cursor-pointer"
+                class="w-5 h-5 mt-1  rounded-full text-pink-600 border-gray-300 focus:ring-pink-500"
             >
 
             <div>
@@ -45,12 +45,12 @@ class="bg-white shadow rounded-xl p-5">
                     <span class="
                         px-3 py-2 rounded-full text-xs font-semibold
 
-                        {{ $todo->category === 'Freelance'
+                        {{ $todo->subcategory === 'Freelance'
                             ? 'bg-purple-100 text-purple-700'
                             : 'bg-blue-100 text-blue-700'
                         }}
                     ">
-                        {{ $todo->category }}
+                        {{ $todo->subcategory }}
                     </span>
 
                 </div>

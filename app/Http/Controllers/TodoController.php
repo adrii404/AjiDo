@@ -17,6 +17,7 @@ class TodoController extends Controller
             'title' => 'required|max:255',
             'description' => 'nullable',
             'category' => 'required|string',
+            'subcategory' => 'nullable|string',
             'due_date' => 'nullable|date',
         ]);
 

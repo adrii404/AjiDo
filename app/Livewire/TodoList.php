@@ -22,6 +22,7 @@ class TodoList extends Component
             'description' => $this->description,
             'due_date' => $this->due_date,
             'category' => $this->category,
+            'subcategory' =>$this->subcategory,
             'completed' => false,
         ]);
 

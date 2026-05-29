@@ -11,6 +11,7 @@ class Todo extends Model
         'description',
         'due_date',
         'category',
+        'subcategory',
         'completed',
     ];
 }
