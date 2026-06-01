@@ -74,6 +74,14 @@ class TodoController extends Controller
             ? ($validated['subcategory'] ?: 'Freelance')
             : null;
 
+        if ($request->filled('due_date')) {
+            $validated['due_at'] = $request->due_date;
+
+            if ($request->filled('due_at')) {
+                $validated['due_at'] .= ' ' . $request->due_at;
+            }
+        }
+
         $todo->update($validated);
 
         return $this->redirectToTodoTab($validated['category'], $validated['subcategory'])

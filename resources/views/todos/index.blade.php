@@ -17,7 +17,8 @@
                 description: '',
                 category: 'Personal',
                 subcategory: '',
-                due_date: ''
+                due_date: '',
+                due_at: ''
             },
         
             get editAction() {
@@ -308,6 +309,10 @@
                             <label class="block text-sm font-medium mb-1">Due Date</label>
                             <input type="date" name="due_date" x-model="editTodo.due_date"
                                 class="w-full border rounded-lg px-4 py-2">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Due Time</label>
+                                <input type="time" name="due_at" x-model="editTodo.due_at" class="w-full border rounded-lg px-4 py-2">
+                            </div>
                         </div>
 
                         <div class="flex justify-end gap-3 pt-2">
