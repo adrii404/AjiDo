@@ -8,8 +8,7 @@ use Livewire\Component;
 class TodoToggle extends Component
 {
     public Todo $todo;
-    public $completed = false;
-
+    public $completed;
     public function mount(Todo $todo)
     {
         $this->todo = $todo;
@@ -18,12 +17,21 @@ class TodoToggle extends Component
 
     public function toggle()
     {
-        // Immediately update the UI (optimistic)
-        $this->completed = !$this->completed;
-        
-        // Then update the database
         $this->todo->update([
-            'completed' => $this->completed
+            'completed' => !$this->todo->completed
+        ]);
+        $this->completed = $this->todo->completed;
+    }
+
+    public function openEditModal()
+    {
+        $this->dispatch('open-edit-modal', todo: [
+            'id' => $this->todo->id,
+            'title' => $this->todo->title,
+            'description' => $this->todo->description,
+            'category' => $this->todo->category,
+            'subcategory' => $this->todo->subcategory,
+            'due_date' => $this->todo->due_date,
         ]);
     }
 

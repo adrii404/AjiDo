@@ -29,7 +29,12 @@ Route::view('profile', 'profile')
 
 Route::get('/todos', [TodoController::class, 'index']);
 Route::post('/todos', [TodoController::class, 'store']);
-
 Route::patch('/todos/{todo}/toggle', [TodoController::class, 'toggle']);
+
+//Edit & Delete Functions
+Route::put('/todos/{todo}', [TodoController::class, 'update' ]);
+Route::delete('/todos/{todo}', [TodoController::class, 'destroy']);
+
+
 
 require __DIR__.'/auth.php';

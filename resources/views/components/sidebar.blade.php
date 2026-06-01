@@ -1,23 +1,44 @@
-<aside class=" top-0 z-10 w-64 bg-pink-200 text-white min-h-screen">
+<aside class="top-0 z-10 w-64 min-h-screen bg-white border-r border-pink-100">
 
-    <nav class="p-4 text-pink-800">
+    {{-- Navigation --}}
+    <nav class="p-5 space-y-2">
 
         <a href="{{ route('dashboard') }}"
-           class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
+           class="flex items-center px-4 py-3 rounded-2xl
+                  text-pink-700 font-medium
+                  hover:bg-pink-50 hover:text-pink-600
+                  transition-all duration-200">
+
             Dashboard
         </a>
+
         <a href="{{ route('calendar') }}"
-           class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
+           class="flex items-center px-4 py-3 rounded-2xl
+                  text-pink-700 font-medium
+                  hover:bg-pink-50 hover:text-pink-600
+                  transition-all duration-200">
+
             Calendar
-        </a><a href="/todos"
-           class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
+        </a>
+
+        <a href="/todos"
+           class="flex items-center px-4 py-3 rounded-2xl
+                  text-pink-700 font-medium
+                  hover:bg-pink-50 hover:text-pink-600
+                  transition-all duration-200">
+
             To Do
         </a>
-        </a><a href="{{ route('tracker') }}"
-           class="block px-4 py-2 rounded hover:bg-pink-800 hover:text-pink-100">
+
+        <a href="{{ route('tracker') }}"
+           class="flex items-center px-4 py-3 rounded-2xl
+                  text-pink-700 font-medium
+                  hover:bg-pink-50 hover:text-pink-600
+                  transition-all duration-200">
+
             Budget Tracker
         </a>
-        
 
     </nav>
+
 </aside>

@@ -1,23 +1,13 @@
-<?php
-use App\Livewire\Actions\Logout;
-use Livewire\Volt\Component;
+<header class="bg-white border-b border-pink-100 px-8 py-5 flex items-center justify-between">
 
-new class extends Component {
-    public function logout(Logout $logout): void
-    {
-        $logout();
-
-        $this->redirectRoute('login');
-    }
-};
-
-?>
-
-<header class="bg-pink-200 shadow px-6 py-6 flex justify-between">
-
-    <div class="px-12 text-3xl font-bold  text-pink-800">
-        Aji Do!
+    {{-- Logo --}}
+    <div class="px-4">
+        <h1 class="text-3xl font-black tracking-tight text-pink-600">
+            Aji <span class="text-pink-400">Do!</span>
+        </h1>
     </div>
+
+    {{-- Right Side --}}
     <div class="flex items-center">
 
         <x-dropdown align="right" width="48">
@@ -25,22 +15,36 @@ new class extends Component {
             {{-- Trigger --}}
             <x-slot name="trigger">
                 <button
-                    class="inline-flex items-center px-3 py-2 border border-transparent
-                           text-sm leading-4 font-medium rounded-md text-gray-500
-                           bg-white hover:text-gray-700 focus:outline-none
-                           transition ease-in-out duration-150">
+                    class="inline-flex items-center gap-3 px-3 py-2
+                           rounded-2xl bg-pink-50 border border-pink-100
+                           hover:bg-pink-100 transition-all duration-200">
 
-                    <div>
+                    {{-- Avatar --}}
+                    <div
+                        class="w-9 h-9 rounded-full
+                               bg-gradient-to-br from-pink-400 to-pink-300
+                               flex items-center justify-center
+                               text-white text-sm font-bold shadow-sm">
+
+                        {{ strtoupper(substr(Auth::user()->name ?? 'G', 0, 1)) }}
+
+                    </div>
+
+                    {{-- Name --}}
+                    <div class="text-sm font-medium text-pink-700">
                         {{ Auth::user()->name ?? 'Guest' }}
                     </div>
 
-                    <div class="ml-1">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
+                    {{-- Arrow --}}
+                    <svg class="fill-current h-4 w-4 text-pink-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+
+                    </svg>
 
                 </button>
             </x-slot>
@@ -48,17 +52,24 @@ new class extends Component {
             {{-- Dropdown Content --}}
             <x-slot name="content">
 
-                {{-- Profile --}}
-                <x-dropdown-link :href="route('profile')">
-                    Profile
-                </x-dropdown-link>
+                <div class="p-1">
 
-                {{-- Logout --}}
-                <button wire:click="logout" class="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100">
+                    <x-dropdown-link :href="route('profile')"
+                        class="rounded-xl text-pink-700 hover:bg-pink-50">
+                        Profile
+                    </x-dropdown-link>
 
-                    Logout
+                    <button
+                        wire:click="logout"
+                        class="w-full px-4 py-2 text-left text-sm
+                               rounded-xl text-pink-700
+                               hover:bg-pink-50 transition">
 
-                </button>
+                        Logout
+
+                    </button>
+
+                </div>
 
             </x-slot>
 

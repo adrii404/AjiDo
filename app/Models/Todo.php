@@ -10,6 +10,7 @@ class Todo extends Model
         'title',
         'description',
         'due_date',
+        'due_at',
         'category',
         'subcategory',
         'completed',
